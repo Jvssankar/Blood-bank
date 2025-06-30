@@ -1,0 +1,291 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Calibri", sans-serif;
+  background: linear-gradient(to bottom, #051f30, #000000);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top Navigation Bar */
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 1000;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* Dropdown Menu */
+.dropdown {
+  position: relative;
+}
+
+.dropbtn {
+  background: none;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+
+.dropbtn:hover {
+  color: #e0e0e0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #ffffff;
+  min-width: 150px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition: background 0.2s;
+}
+
+.dropdown-content a:hover {
+  background-color: #f5f5f5;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Sidebar Menu */
+.menu-content {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 85px;
+  height: calc(100% - 60px);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  overflow-y: auto;
+  transition: width 0.3s ease;
+  padding-top: 20px;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.menu-content:hover {
+  width: 240px;
+}
+
+.menu-content li {
+  list-style: none;
+  margin-bottom: 16px;
+  border-radius: 0 30px 30px 0;
+  transition: background 0.3s ease;
+}
+
+.menu-content li:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.menu-content a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 1px 16px;
+  text-decoration: none;
+  color: #dcdcdc;
+  transition: background 0.3s ease, color 0.2s ease;
+}
+
+.menu-content a:hover {
+  color: #ffffff;
+}
+
+.menu-content li span:nth-child(2) {
+  display: none;
+  white-space: nowrap;
+  font-size: 16px;
+}
+
+.menu-content:hover li span:nth-child(2) {
+  display: inline;
+}
+
+/* Icon Circle */
+.menu-icon {
+  background-color: #0c0c0c;
+  color: white;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.menu-content li:hover .menu-icon {
+  background-color: #1e1e1e;
+}
+
+/* Scrollbar Hidden */
+.menu-content::-webkit-scrollbar {
+  display: none;
+}
+
+/* Main Content Layout */
+.main {
+  margin-left: 85px;
+  padding: 75px 20px 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Donate Blood Form Card */
+.card-cont {
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.02)
+  );
+  border-radius: 16px;
+  padding: 52px 90px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  width: 100%;
+  max-width: 600px;
+  color: #ffffff;
+  transition: transform 0.3s ease;
+}
+.card-cont:hover {
+  transform: scale(1.02);
+}
+
+/* Heading */
+.card-heading h1 {
+  font-size: 30px;
+  margin-bottom: 35px;
+  letter-spacing: 1px;
+  color: #ffffff;
+  text-align: center;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 10px;
+}
+
+/* Form Layout */
+.form-body {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Input Fields */
+.in {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.in label {
+  font-size: 15px;
+  color: #dcdcdc;
+  font-weight: 500;
+}
+
+.in-sty {
+  padding: 15px 25px;
+  border-radius: 10px;
+  border: none;
+  font-size: 15px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #111;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.in-sty:focus {
+  outline: 2px solid #2196f3;
+  background: #fff;
+}
+
+/* Submit Button */
+.btn {
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #e53935, #d32f2f);
+  color: white;
+  padding: 14px;
+  font-size: 17px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(255, 4, 0, 0.4);
+  transition: background 0.3s ease, transform 0.2s;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.btn-danger:hover {
+  background: linear-gradient(135deg, #c62828, #b71c1c);
+  transform: translateY(-2px);
+}
+
+/* Responsive Enhancements */
+@media screen and (max-width: 768px) {
+  .menu-content:hover {
+    width: 180px;
+  }
+
+  .main {
+    margin-left: 0;
+    padding: 100px 20px;
+  }
+
+  .card-cont {
+    max-width: 90%;
+    padding: 40px 20px;
+  }
+
+  .btn-danger {
+    font-size: 15px;
+    padding: 12px;
+  }
+}
